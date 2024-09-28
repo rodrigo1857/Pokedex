@@ -9,31 +9,27 @@ import { ConfigModule } from '@nestjs/config';
 import { EnvConfiguration } from './config/env.config';
 import { JoiValidation } from './config/joi.validation';
 
-
 @Module({
   imports: [
-  ConfigModule.forRoot({
-    load:[EnvConfiguration],
-    validationSchema: JoiValidation,
-  }),
-  ServeStaticModule.forRoot({
-  rootPath: join(__dirname,'..','public'),
-  }),
+    ConfigModule.forRoot({
+      load: [EnvConfiguration],
+      validationSchema: JoiValidation,
+    }),
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', 'public'),
+    }),
 
-MongooseModule.forRoot(process.env.MONGODB,{
-  dbName: 'pokemonDb',
-}),
+    MongooseModule.forRoot(process.env.MONGODB, {
+      dbName: 'pokemonDb',
+    }),
 
-PokemonModule,
+    PokemonModule,
 
-CommonModule,
+    CommonModule,
 
-SeedModule],
+    SeedModule,
+  ],
 })
 export class AppModule {
-
-  constructor(){
-  }
-
+  constructor() {}
 }
-

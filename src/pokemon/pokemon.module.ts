@@ -14,11 +14,8 @@ import { ConfigModule } from '@nestjs/config';
       {
         name: Pokemon.name,
         schema: PokemonSchema,
-      }
-    ]
-      
-    )
-
+      },
+    ]),
   ],
   // Uno es exportar el servicio para que pueda ser inyectado en otros modulos y
   // el otro es exportar el modulo de mongoose para que pueda ser inyectado en otros modulos
