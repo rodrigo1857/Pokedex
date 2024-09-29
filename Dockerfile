@@ -26,6 +26,9 @@ RUN npm install --prod
 
 COPY --from=builder /app/dist ./dist
 
+##copar la carpeta para servir archivos estaticos
+COPY ./public ./public
+
 # # Copiar el directorio y su contenido
 # RUN mkdir -p ./pokedex
 
